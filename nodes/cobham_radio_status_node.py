@@ -10,7 +10,7 @@ from std_msgs.msg import Float32
 rospy.init_node('cobham_radio_status')
 
 timestamp = datetime.datetime.utcfromtimestamp(rospy.Time.now().to_time()).isoformat()
-bag = rosbag.Bag('nodes/cobham_radio_status'+('-'.join(timestamp.split(':')))+'.bag', 'w')
+bag = rosbag.Bag('nodes/cobham_radio_status-'+('-'.join(timestamp.split(':')))+'.bag', 'w')
     
 while not rospy.has_param('cobham_radio_status'):
     print 'waiting for cobham parameters...'
